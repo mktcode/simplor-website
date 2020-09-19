@@ -1,4 +1,8 @@
 <template>
-  <div class="container">
-  </div>
+<div>
+  <Header />
+  <Adapters />
+  <Oracles />
+  <Footer />
+</div>
 </template>

@@ -4,7 +4,7 @@ export default {
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode
   */
-  mode: 'spa',
+  ssr: false,
   /*
   ** Nuxt target
   ** See https://nuxtjs.org/api/configuration-target
@@ -23,12 +23,17 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      { src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js" },
+      { src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js" }
     ]
   },
   /*
   ** Global CSS
   */
   css: [
+    '@/assets/css/main'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -45,6 +50,21 @@ export default {
   ** Nuxt.js dev-modules
   */
   buildModules: [
+    ['@nuxtjs/fontawesome', {
+      component: 'fa-icon',
+      icons: {
+        solid: [
+          'faGenderless',
+          'faFileImport',
+          'faCode',
+          'faChevronDown'
+        ],
+        brands: [
+          'faTwitter',
+          'faGithub'
+        ]
+      }
+    }]
   ],
   /*
   ** Nuxt.js modules
