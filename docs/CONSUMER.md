@@ -1,7 +1,6 @@
 # Consuming Data
 
-Consuming data with SimplOr is very easy. In your smart contract you simply emit request events specifying an adapter and a callback.
-The adapter defines how the event data needs to be structured, how your callback needs to be implemented and how much a single request response cycle will cost your contract.
+Consuming data with SimplOr is very easy. In your smart contract you simply emit request events specifying an adapter and a callback. The adapter defines how the event data needs to be structured, how your callback needs to be implemented and how much a single request response cycle will cost your contract.
 
 ### Setup
 
@@ -16,7 +15,7 @@ pragma solidity ^0.7.1;
 
 import "@simplor/SimplorConsumer.sol";
 
-contract ConsumerExample is SimplorConsumer { ... }
+contract MyContract is SimplorConsumer { ... }
 ```
 
 You also need to set the address of the SimplOr Registration Gateway. To do so use the `setRegistrationGateway` function.
@@ -72,7 +71,7 @@ SimplOr is decentralized by default. But there are two factors that determine ho
 
 So basically you decide how many confirmations of a response you want and the adapter decides (or lets you decide) how decentralized the data sources shall be.
 
-If you just want a single response from the oracle network the only thing you have to do is to emit your event and define a callback.
+If you just want a single response from the oracle network the only thing you have to do is to define a callback and emit your event.
 
 ```javascript
 function requestEthPrice() external {
@@ -90,7 +89,7 @@ function ethPriceCallback(uint256[] memory ethPrices, uint256 requestId) public 
 
 You might notice that the response comes as an array. This will always be the case, no matter if you request one or more responses. But it will always contain the number of response values you requested. The last argument always has to be the `requestId`. In this example we don't use it but in most cases you will need it.
 
-The type of the array you receive in your callback depends on the adapter. An adapter can return a boolen value, an integer or a string. What type the adapter returns is fixed in most cases. But an adapter can also decide what type to return each time it is invoked, based on the data it fetches or other factors.
+The type of the array you receive in your callback depends on the adapter. An adapter can return a boolen value, an integer or a string. What type the adapter returns is fixed in most cases but an adapter can also decide what type to return each time it is invoked, based on the data it fetches or other factors.
 
 That means, depending on the adapter, it might be necessary to implement a callback for each type the adapter can return.
 
@@ -106,4 +105,7 @@ As you can see, the exact implementation depends on which adapter(s) you want to
 
 ### Price per Response
 
-...
+In SimplOr you pay for responses the moment your contract receives them. Prices or fees are always bound to the gas cost of the underlying transaction. **That also means that the efficiency of your callback functions affects the price of each response.**
+
+The main factor for pricing though are the adapters. An adapter can define a price factor of up to 10 (stored on the blockchain and adjustable through governance) that will be multiplied with the gas cost of the response transaction.
+With a factor of 1 (default) the only costs you need to cover when receiving data is the gas cost of the response transaction. A factor of 2 doubles that and the node receives a gas refund and the adapter earns the same amount. The final price will always be equally split between node and adapter.
