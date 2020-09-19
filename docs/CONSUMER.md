@@ -7,11 +7,11 @@ The adapter defines how the event data needs to be structured, how your callback
 
 First you need to install the SimplOr consumer contract to inherit from.
 
-```
+```shell=
 npm i --save @simplor/consumer
 ```
 
-```
+```javascript=
 pragma solidity ^0.7.1;
 
 import "@simplor/SimplorConsumer.sol";
@@ -21,7 +21,7 @@ contract ConsumerExample is SimplorConsumer { ... }
 
 You also need to set the address of the SimplOr Registration Gateway. To do so use the `setRegistrationGateway` function.
 
-```
+```javascript
 constructor(address simplorRegistrationGatewayAddress) SimplorConsumer() {
   setRegistrationGateway(simplorRegistrationGatewayAddress);
 }
@@ -37,7 +37,7 @@ Choose a name for your event and define its attributes. The minimum required att
 
 The simplest form of a request event would look like this:
 
-```
+```javascript
 event MyEthPriceEvent(
   uint256 requestId,
   string adapterName,
@@ -47,7 +47,7 @@ event MyEthPriceEvent(
 
 An event with all optional attributes and an additional *sourceId* attribute (defined by the adapter) could look like this:
 
-```
+```javascript
 event MyEthPriceEvent(
   uint256 requestId,
   string adapterName,
@@ -62,7 +62,7 @@ event MyEthPriceEvent(
 After you decided which adapter you want to use and you defined an event, you need to register that event on the SimplOr Registration Gateway you set earlier. Once you called the following function, the SimplOr network will listen to that event.
 
 
-```
+```javascript
 registerSimplorEvent("MyEthPriceEvent");
 ```
 
@@ -74,7 +74,7 @@ So basically you decide how many confirmations of a response you want and the ad
 
 If you just want a single response from the oracle network the only thing you have to do is to emit your event and define a callback.
 
-```
+```javascript
 function requestEthPrice() external {
   emit MyEthPriceEvent(
     _nextSimplorReqID(),
@@ -94,7 +94,7 @@ The type of the array you receive in your callback depends on the adapter. An ad
 
 That means, depending on the adapter, it might be necessary to implement a callback for each type the adapter can return.
 
-```
+```javascript
 function ethPriceCallback(bool[] memory ethPrices, uint256 requestId) public onlySimplOracle
 function ethPriceCallback(uint256[] memory ethPrices, uint256 requestId) public onlySimplOracle
 function ethPriceCallback(string[] memory ethPrices, uint256 requestId) public onlySimplOracle
