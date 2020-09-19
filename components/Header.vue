@@ -20,7 +20,7 @@
       <a href="#" class="btn btn-light btn-lg my-2 shadow-sm d-inline-flex justify-content-center align-items-center">
         <fa-icon :icon="['fas', 'genderless']" class="mr-3 fa-2x" />
         <div class="d-flex flex-column flex-fill">
-          Be an Oracle
+          Become an Oracle
           <small class="text-muted">Install, run and earn in less than 5 minutes!</small>
         </div>
       </a>
