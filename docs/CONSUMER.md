@@ -142,6 +142,8 @@ The data needs to be of type `bytes32`.
 
 ### Price per Response
 
+SimplOr uses ETH for payments. You don't need to convert to any other token. Just make sure your contract has enough ETH to pay for requests.
+
 In SimplOr you pay for responses the moment your contract receives them. Prices or fees are always bound to the gas cost of the underlying transaction. **That also means that the efficiency of your callback functions affects the price of each response.**
 
 The main factor for pricing though are the adapters. An adapter can define a price factor of up to 10 (stored on the blockchain and adjustable through governance) that will be multiplied with the gas cost of the response transaction.
