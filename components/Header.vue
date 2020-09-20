@@ -10,7 +10,7 @@
       Simple &amp; flexible Oracle Service<br>for Ethereum Smart Contracts
     </p>
     <div class="text-center py-5 d-flex flex-column mx-auto">
-      <a href="#" class="btn btn-light btn-lg my-2 shadow-sm d-flex justify-content-start align-items-center">
+      <a href="https://github.com/mktcode/simplor-website/blob/master/docs/CONSUMER.md" class="btn btn-light btn-lg my-2 shadow-sm d-flex justify-content-start align-items-center">
         <fa-icon :icon="['fas', 'file-import']" class="mr-3" style="font-size: 1.5rem" />
         <div class="d-flex flex-column flex-fill">
           Get Real World Data
