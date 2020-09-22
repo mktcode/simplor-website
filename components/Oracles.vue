@@ -4,8 +4,8 @@
       <h1 class="my-5">Oracles</h1>
       <p class="lead">
         The standard oracle node is written in Javascript and requires Node.js.
-        It listens to all request events registered by consumer contracts and it will try to respond to every request that requires an adapter that is installed.
-        You can use a blacklist or a whitelist to control which individual consumers you want to serve. You nodes response transactions will be reverted if the consumer does not have sufficiant ETH to pay the fee.
+        It listens to all request events from registered consumer contracts and it will try to respond to every request that requires an adapter that it has installed.
+        You can use a blacklist or a whitelist to control which individual consumers you want to serve. Your node's response transactions will be reverted if the consumer does not have sufficiant ETH to pay the fee.
       </p>
 
       <div class="card shadow-lg my-5 adapters-list">

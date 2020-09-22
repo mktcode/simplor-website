@@ -10,6 +10,10 @@
 
 <style lang="sass">
 .lines
+  background: rgb(255,255,255)
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 45%)
+  background-position: 0 -400px
+  background-repeat: no-repeat
   position: absolute !important
   z-index: 2 !important
   top: 0

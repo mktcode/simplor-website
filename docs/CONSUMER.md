@@ -44,7 +44,7 @@ This will automatically register your consumer contract in the oracle network an
 
 ### Requesting and Receiving Data
 
-SimplOr is decentralized by default. But there are two factors that determine how decentralized a response will be: The number of oracles you require to respond before your callback gets invoked and the adapter that is responsible for fetching the actual data. The default adapter for requesting the ETH price for example let's you decide if you want to have a decentralized median result or a result from one specific source.
+SimplOr is decentralized by default. But there are two factors that determine how decentralized a response will be: The number of oracles you require to respond before your callback gets invoked and the adapter that is responsible for fetching the actual data. The default adapter for requesting the ETH price for example let's you decide if you want to have a decentralized median result from multiple sources or a result from one specific source.
 
 So basically you decide how many confirmations of a response you want and the adapter decides (or lets you decide) how decentralized the data sources shall be.
 
@@ -116,7 +116,7 @@ makeSimplorRequest(
 );
 ```
 
-As you can see you still have to provide the third argument, which is the number required responses.
+As you can see you still have to provide the third argument, which is the number required responses and you can just the default.
 
 ##### Expire Timestamp
 
@@ -153,7 +153,7 @@ The data needs to be of type `bytes32`.
 
 ### Price per Response
 
-SimplOr uses ETH for payments. You don't need to convert to any other token. Just make sure your contract has enough ETH to pay for requests.
+SimplOr uses ETH for payments. You don't need to convert to any other token. Just make sure your contract has enough ETH to pay for responses.
 
 In SimplOr you pay for responses the moment your contract receives them. Prices or fees are always bound to the gas cost of the underlying transaction. **That also means that the efficiency of your callback functions affects the price of each response.**
 
@@ -232,8 +232,10 @@ contract ConsumerExample is SimplorConsumer {
       }
     }
 
-    if (confirmations >= 5) {
+    if (confirmations > 5) {
       _isValid = true;
+    } else {
+      _isValue = false;
     }
   }
 

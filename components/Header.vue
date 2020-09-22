@@ -1,10 +1,10 @@
 <template>
-  <div class="bg-primary pt-5 pb-3 min-vh-100 d-flex flex-column" id="header">
+  <div class="bg-primary pb-3 min-vh-100 d-flex flex-column" id="header">
     <LinesAnimation />
     <canvas id="animation-canvas" class="position-absolute"></canvas>
-    <h1 class="text-white mb-0 pt-5 pb-3 d-flex justify-content-center align-items-center">
-      Simpl
-      <fa-icon :icon="['fas', 'genderless']" class="fa-2x mx-1" />r
+    <Connect />
+    <h1 class="logo text-white mb-0 pt-5 pb-3 d-flex justify-content-center align-items-center">
+      Simpl<img src="/logo.svg" alt="O" class="rounded-circle mx-1" />r
     </h1>
     <p class="lead text-center text-white-50 mt-3 font-weight-bold">
       Simple &amp; flexible Oracle Service<br>for Ethereum Smart Contracts
@@ -28,11 +28,12 @@
         <fa-icon :icon="['fas', 'code']" class="mr-3" />
         <div class="d-flex flex-column flex-fill">
           Create an Adapter
-          <small class="text-muted">Implement an API and earn with every request!</small>
+          <small class="text-muted">Implement any API and earn with every request!</small>
         </div>
       </a>
+      <small class="d-flex py-3 justify-content-center text-white" style="opacity: 0.3">Experimental v{{ version }}</small>
     </div>
-    <a href="#" class="text-white font-weight-bold d-flex flex-column align-items-center mx-auto mt-auto scroll-link">
+    <a href="#content" class="text-white font-weight-bold d-flex flex-column align-items-center mx-auto mt-auto scroll-link">
       Learn more
       <fa-icon :icon="['fas', 'chevron-down']" class="fa-2x" />
     </a>
@@ -47,13 +48,18 @@
     background-size: cover
     background-position: center center
     z-index: 1
-    background: rgb(0,119,238)
-    background: linear-gradient(90deg, rgba(0,119,238,1) 0%, rgba(0,136,255,1) 40%, rgba(0,136,255,1) 60%, rgba(0,119,238,1) 100%)
+    background: rgb(0,29,41)
+    background: linear-gradient(90deg, rgba(0,29,41,1) 0%, rgba(0,79,112,1) 50%, rgba(0,29,41,1) 100%)
     > *
       position: relative
       z-index: 3
     canvas
       z-index: 2
+    .logo
+      text-shadow: 0 0 25px rgba(0, 0, 0, 1)
+      img
+        width: 3rem
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 20px inset rgba(0, 0, 0, 1)
     .scroll-link
       svg
         transition: top 0.1s ease
@@ -65,7 +71,14 @@
 </style>
 
 <script>
+import packageInfo from "@/package.json"
+
 export default {
+  computed: {
+    version() {
+      return packageInfo.version
+    }
+  },
   mounted() {
     let width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
 

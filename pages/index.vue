@@ -1,8 +1,10 @@
 <template>
 <div>
   <Header />
-  <Adapters />
-  <Oracles />
-  <Footer />
+  <div id="content">
+    <Adapters />
+    <Oracles />
+    <Footer />
+  </div>
 </div>
 </template>

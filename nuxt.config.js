@@ -60,6 +60,7 @@ export default {
           'faChevronDown'
         ],
         brands: [
+          'faEthereum',
           'faTwitter',
           'faGithub'
         ]
