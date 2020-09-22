@@ -11,7 +11,7 @@
 - [Minimum Consumer Example](#Minimum-Consumer-Example)
 - [Advanced Consumer Example](#Advanced-Consumer-Example)
 
-Consuming data with SimplOr is very easy. In your smart contract you simply need to specify an adapter and a callback. The adapter defines how your callback needs to be implemented and how much a single request response cycle will cost your contract.
+Consuming data with SimplOr is very easy. In your smart contract you simply need to inherit from our SimplorConsumer contract and specify an adapter and a callback. The adapter defines how your callback needs to be implemented and how much a single request response cycle will cost your contract.
 
 Take a look at the [Minimum Consumer Example](#Minimum-Consumer-Example) at the bottom of the page to see what it boils down to in many simple cases.
 
