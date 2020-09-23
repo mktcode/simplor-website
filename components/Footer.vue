@@ -12,4 +12,6 @@
 <style lang="sass">
 footer
   font-size: 1.5rem
+  background: rgb(0,29,41)
+  background: linear-gradient(90deg, rgba(0,29,41,1) 0%, rgba(0,79,112,1) 50%, rgba(0,29,41,1) 100%)
 </style>
