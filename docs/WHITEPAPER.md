@@ -29,7 +29,7 @@ A trustless oracle is an oracle you don't need to trust and that can't easily be
 
 # 1. Facilitating Consensus
 
-# 1.1 The Dynamic Data Problem
+## 1.1 The Dynamic Data Problem
 
 Trustless, decentralized oracle networks will always face the problem of facilitating consensus over very dynamic data.
 An oracle might report a gold price of $1.869,17 while another one reports $1,869.19
@@ -41,7 +41,7 @@ For a human being it is easy to make sense of these numbers while an automated o
 This is why most current solutions leave data aggregation and finding consensus simply to the consumer.
 Decentralization has to be achieved "on-chain", which is expensive.
 
-# 1.2 Per-Request Consensus
+## 1.2 Per-Request Consensus
 
 In SimplOr the adapters that the oracles use to fetch data are
 also responsible for providing a reasonable deviation tolerance algorithm or even
@@ -50,23 +50,42 @@ multiple ones to let the consumer decide.
 So basically the consumers and the adapters provide a per-request consensus algorithm,
 specific to the requested data, that the oracle network will rely on.
 
-# 1.3 We are wrong!
+## 1.3 We are wrong!
 
 The other part in the process of facilitating consensus happens in an "We are wrong!" approach. The first oracle that fetches data for a request, simply
 stores it on the oracle blockchain. The next one compares its own result to the existing one(s) and removes
 all if the adapter's deviation function detects a too significant deviation. If the deviation is within the predefined range, the result is just added and the next oracle will continue. This process repeats until a desired amount of oracles in a row returned the same sufficiently similar results.
 
-# 1.4 Byzantine Fault Tolerance (BFT)
+## 1.4 Byzantine Fault Tolerance (BFT)
 
 By requiring a number of consecutively same results, chances for a majority of oracles to find a consensus is amplified, compared to the chances the respective minority has. That leads to an effect where even at a 49% corruption rate, the system can still return 60% correct results, which is significantly more than 51%.
 
 The required number of consecutively same results is dynamically adjusted based on failure rate. The more the network experiences deviating data the harder it will become to reach consensus while always amplifying chances of the majority. At a 40% organized corruption rate (same wrong values) the network can still reach success rates of over 99%, given a large amount of nodes (~10,000). With one third corruption (BFT) it is a 100%.
 
 # 3. Competition
-# 3.1 Advantages
-# 3.2 Disadvantages
+## 3.1 Advantages
+## 3.2 Disadvantages
+## 3.3 MVP
 # 4. Monetization
-# 5. MVP
+
+## 4.1 Registration
+
+A fee is charged for registering nodes and adapters.
+
+## 4.1 MergePay
+
+MergePay will be the first experimental project using the SimplOr network.
+As a decentralized payment and donation service for the software collaboration
+platform GitHub, it needs information about contributions and accounts, which will
+require SimplOr adapters tailored for those needs.
+This will add a real world scenario for the oracle network to be tested with.
+
+MergePay will be developed simultaneously as required and finished and launched
+after a successful launch of SimplOr. It allows users to deposit funds that can be automatically released to the receiving party once certain conditions on GitHub are met or to simply transfer value between GitHub accounts without knowing their address.
+
+Monetization is implemented in the form of a simple fee model and automated marketing services.
+
+Prototype available at: https://mergepay.uber.space
 
 # Notes
 - Adapter Security
@@ -84,18 +103,3 @@ The required number of consecutively same results is dynamically adjusted based 
     - can vote on other oracles to become trusted
     - earn more fees
     -
-
-# MergePay
-
-MergePay will be the first experimental project using the SimplOr network.
-As a decentralized payment and donation service for the software collaboration
-platform GitHub, it needs information about contributions and accounts, which will
-require SimplOr adapters tailored for those needs.
-This will add a real world scenario for the oracle network to be tested with.
-
-MergePay will be developed simultaneously as required and finished and launched
-after a successful launch of SimplOr. It allows users to deposit funds that can be automatically released to the receiving party once certain conditions on GitHub are met or to simply transfer value between GitHub accounts without knowing their address.
-
-Monetization is implemented in the form of a simple fee model and automated marketing services.
-
-Prototype available at: https://mergepay.uber.space
