@@ -13,7 +13,9 @@
   - [1.2 Per-Request Consensus](#12-Per-Request-Consensus)
   - [1.3 We are wrong!](#13-We-are-wrong)
   - [1.4 Byzantine Fault Tolerance (BFT)](#14-Byzantine-Fault-Tolerance-BFT)
-- [4. Monetization](#1-Monetization)
+- [4. Monetization](#4-Monetization)
+  - [4.1 Registration](#41-Registration)
+  - [4.2 MergePay](#42-MergePay)
 
 # 0. In Brief: What is an Oracle?
 
@@ -72,7 +74,7 @@ The required number of consecutively same results is dynamically adjusted based 
 
 A fee is charged for registering nodes and adapters.
 
-## 4.1 MergePay
+## 4.2 MergePay
 
 MergePay will be the first experimental project using the SimplOr network.
 As a decentralized payment and donation service for the software collaboration
