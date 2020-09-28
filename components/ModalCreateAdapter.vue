@@ -40,12 +40,6 @@
   </transition>
 </template>
 
-<style lang="sass">
-.modal
-  background: rgba(0, 0, 0, 0.2)
-  display: block
-</style>
-
 <script>
 export default {
   data() {
