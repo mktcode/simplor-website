@@ -34,9 +34,9 @@
       </a>
       <small class="d-flex flex-column py-3 justify-content-center text-white" style="opacity: 0.3">
         Experimental v{{ version }}
-        <a class="text-white" href="https://github.com/mktcode/simplor-website/blob/master/docs/WHITEPAPER.md">
+        <a class="text-white font-weight-bold" href="https://github.com/mktcode/simplor-website/blob/master/docs/WHITEPAPER.md">
           <fa-icon :icon="['far', 'file']" class="mr-1" />
-          Whitepaper
+          <u>Whitepaper</u>
         </a>
       </small>
     </div>

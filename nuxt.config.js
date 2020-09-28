@@ -61,12 +61,14 @@ export default {
           'faFileImport',
           'faGenderless',
           'faCode',
-          'faChevronDown'
+          'faChevronDown',
+          'faPlug'
         ],
         brands: [
           'faEthereum',
           'faTwitter',
-          'faGithub'
+          'faGithub',
+          'faDiscord'
         ]
       }
     }]
