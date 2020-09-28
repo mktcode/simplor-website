@@ -19,11 +19,11 @@
 
 # 0. In Brief: What is an Oracle?
 
-Orakel oder Oracle-Netzwerke lösen ein entscheidendes Problem dezentraler, Blockchain-basierter Smart Contract-Plattformen. Da solche Verträge deterministisch sein müssen, werden sie bei der Verarbeitung von Transaktionen von externen Datenquellen isoliert. Das bedeutet, dass dynamische Daten aus der Außenwelt proaktiv an sie übertragen werden müssen, bevor sie verarbeitet werden können.
+Oracle oder Oracle-Netzwerke lösen ein entscheidendes Problem dezentraler, blockchain-basierter Smart Contract-Plattformen. Da solche Smart Contracts deterministisch sein müssen, sind sie bei der Verarbeitung von Transaktionen von externen Datenquellen isoliert. Das bedeutet, dass dynamische Daten von externen Schnittstellen proaktiv an sie übertragen werden müssen, bevor sie weiterverarbeitet werden können.
 
-Orakel sind Entitäten, die diese Daten auf eine ausreichend sichere Weise bereitstellen, damit ein intelligenter Vertrag sie in seiner zugrunde liegenden und unveränderlichen Blockchain speichern kann.
+Orakel sind Einheiten, die diese Daten auf eine ausreichend sichere Weise bereitstellen, damit ein Smart Contract sie in seiner zugrunde liegenden und unveränderlichen Blockchain speichern kann.
 
-Vertrauenswürdige Orakel sind diejenigen, denen Sie ausdrücklich vertrauen und die Daten für Sie bereitstellen, wie eine offizielle Institution, der Sie vertrauen.
+Vertrauens Orakel sind diejenigen, denen Sie ausdrücklich vertrauen und die Daten für Sie bereitstellen, wie eine offizielle Institution, der Sie vertrauen.
 
 Diese Orakel haben den Nachteil, dass sie einzelne Fehlerquellen sind und häufig nicht die Redundanz bieten können, die eine sichere und zuverlässige Anwendung benötigt.
 
