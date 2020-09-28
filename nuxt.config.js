@@ -40,6 +40,7 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    '@/plugins/markdown'
   ],
   /*
   ** Auto import components
@@ -53,9 +54,12 @@ export default {
     ['@nuxtjs/fontawesome', {
       component: 'fa-icon',
       icons: {
+        regular: [
+          'faFile'
+        ],
         solid: [
-          'faGenderless',
           'faFileImport',
+          'faGenderless',
           'faCode',
           'faChevronDown'
         ],

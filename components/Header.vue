@@ -7,7 +7,8 @@
       Simpl<img src="/logo.svg" alt="O" class="rounded-circle mx-1" />r
     </h1>
     <p class="lead text-center text-white-50 mt-3 font-weight-bold">
-      Simple &amp; flexible Oracle Service<br>for Ethereum Smart Contracts
+      Oracle Service for Ethereum Smart Contracts<br>
+      Simple, flexible, autonomous.
     </p>
     <div class="text-center py-5 d-flex flex-column mx-auto">
       <a href="https://github.com/mktcode/simplor-website/blob/master/docs/CONSUMER.md" class="btn btn-light btn-lg my-2 shadow-sm d-flex justify-content-start align-items-center">
@@ -24,16 +25,22 @@
           <small class="text-muted">Install, run and earn in less than 5 minutes!</small>
         </div>
       </a>
-      <a href="#" class="btn btn-light btn-lg my-2 shadow-sm d-inline-flex justify-content-center align-items-center">
+      <a @click="$store.commit('showModal', 'CreateAdapter')" class="btn btn-light btn-lg my-2 shadow-sm d-inline-flex justify-content-center align-items-center">
         <fa-icon :icon="['fas', 'code']" class="mr-3" />
         <div class="d-flex flex-column flex-fill">
           Create an Adapter
           <small class="text-muted">Implement any API and earn with every request!</small>
         </div>
       </a>
-      <small class="d-flex py-3 justify-content-center text-white" style="opacity: 0.3">Experimental v{{ version }}</small>
+      <small class="d-flex flex-column py-3 justify-content-center text-white" style="opacity: 0.3">
+        Experimental v{{ version }}
+        <a class="text-white" href="https://github.com/mktcode/simplor-website/blob/master/docs/WHITEPAPER.md">
+          <fa-icon :icon="['far', 'file']" class="mr-1" />
+          Whitepaper
+        </a>
+      </small>
     </div>
-    <a href="#content" class="text-white font-weight-bold d-flex flex-column align-items-center mx-auto mt-auto scroll-link">
+    <a href="#content" class="text-white-50 font-weight-bold d-flex flex-column align-items-center mx-auto mt-auto scroll-link">
       Learn more
       <fa-icon :icon="['fas', 'chevron-down']" class="fa-2x" />
     </a>
