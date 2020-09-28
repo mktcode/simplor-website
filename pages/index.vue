@@ -6,5 +6,6 @@
     <Oracles />
     <Footer />
   </div>
+  <ModalCreateAdapter />
 </div>
 </template>

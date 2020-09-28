@@ -1,4 +1,6 @@
-$theme-colors: ("primary": #0088ff)
+$theme-colors: ("primary": #004f70)
+
+@import "../../node_modules/highlight.js/scss/solarized-dark"
 
 @import "../../node_modules/bootstrap/scss/bootstrap"
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap')
@@ -16,3 +18,25 @@ a
 
 .card
   border: none
+
+.code
+  pre
+    margin-bottom: 0
+
+.fade-enter-active,
+.fade-leave-active
+  transition: opacity .5s
+.fade-enter,
+.fade-leave-to
+  opacity: 0
+
+.modal-enter-active,
+.modal-leave-active
+  transition: opacity .5s
+  .modal-dialog
+    transition: transform .5s
+.modal-enter,
+.modal-leave-to
+  opacity: 0
+  .modal-dialog
+    transform: scale(.9)
