@@ -1,7 +1,12 @@
 <template>
   <div class="d-flex justify-content-end align-items-center p-3">
-    <a href="#" class="btn btn-sm btn-outline-light">
-      <fa-icon :icon="['fab', 'ethereum']" class="mr-1" />
+    <a href="#" class="text-white-50 mr-3">
+      Oracles
+    </a>
+    <a href="#" class="text-white-50 mr-3">
+      Adapters
+    </a>
+    <a href="#" class="text-white-50">
       Connect Wallet
     </a>
   </div>
