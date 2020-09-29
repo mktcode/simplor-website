@@ -55,9 +55,13 @@ export default {
       component: 'fa-icon',
       icons: {
         regular: [
-          'faFile'
+          'faFile',
+          'faCopy',
         ],
         solid: [
+          'faCheck',
+          'faInfo',
+          'faBookReader',
           'faFileImport',
           'faGenderless',
           'faCode',

@@ -7,5 +7,7 @@
     <Footer />
   </div>
   <ModalCreateAdapter />
+  <ModalRequestData />
+  <ModalRegisterAdapter />
 </div>
 </template>

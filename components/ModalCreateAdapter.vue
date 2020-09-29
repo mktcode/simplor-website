@@ -1,6 +1,6 @@
 <template>
   <transition name="modal">
-    <div class="modal overflow-auto" v-if="$store.state.modal.show">
+    <div class="modal overflow-auto" v-if="$store.state.modal.show && $store.state.modal.component == 'ModalCreateAdapter'">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content border-0 shadow-lg">
           <div class="modal-header border-0">
@@ -12,27 +12,30 @@
             </button>
           </div>
           <div class="modal-body">
+            <p>An adapter in SimplOr is nothing more than an npm package that follows certain rules.</p>
             <div v-html="$markdown.render(initCode)" />
             <div v-html="$markdown.render(adapterCode)" />
             <p class="py-3">
-              To learn everything you need to know about adapter development, like modes, request data or monetization, please refer to our adapter documentation.
+              To learn everything about adapter development, like modes, request information or monetization, please refer to our adapter documentation.
               If you need help with something feel free to join our discord server and ask.
             </p>
             <div class="text-center">
-              <a class="btn btn-outline-primary btn-lg w-100 d-flex justify-content-between align-items-center" href="https://github.com/mktcode/simplor-adapter-boilerplate">
-                Documentation
-                <fa-icon :icon="['fab', 'github']" />
+              <a class="btn btn-outline-primary btn-lg w-100 d-flex justify-content-between align-items-center" href="#">
+                Adapter Documentation
+                <fa-icon :icon="['fas', 'book-reader']" />
               </a>
-              <a class="btn btn-outline-primary btn-lg w-100 d-flex justify-content-between align-items-center mt-2" href="https://github.com/mktcode/simplor-adapter-boilerplate">
-                Discord
+              <a class="btn btn-outline-primary btn-lg w-100 d-flex justify-content-between align-items-center mt-2" href="#">
+                Chat with us on Discord!
                 <fa-icon :icon="['fab', 'discord']" />
               </a>
-              <h5 class="modal-title mb-3 mt-4">You're done?</h5>
-              <a class="btn btn-primary btn-lg w-100 d-flex justify-content-between align-items-center" href="https://github.com/mktcode/simplor-adapter-boilerplate">
-                Register Adapter
-                <fa-icon :icon="['fas', 'plug']" />
-              </a>
+              <h5 class="modal-title mt-4">You're done?</h5>
             </div>
+          </div>
+          <div class="modal-footer p-0 border-0 overflow-hidden">
+            <a @click="$store.commit('showModal', 'ModalRegisterAdapter')" class="m-0 rounded-0 btn btn-primary btn-lg w-100 d-flex justify-content-between align-items-center" href="#">
+              Register Adapter
+              <fa-icon :icon="['fas', 'plug']" />
+            </a>
           </div>
         </div>
       </div>

@@ -1,5 +1,7 @@
 const markdown = require('markdown-it')
 const hljs = require('highlight.js')
+const hljsSolidity = require('highlightjs-solidity')
+hljsSolidity(hljs)
 
 export default ({
   app

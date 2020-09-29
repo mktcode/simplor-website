@@ -10,7 +10,7 @@
       Simple, flexible and autonomous Oracle Service<br>for Ethereum Smart Contracts.
     </p>
     <div class="text-center py-5 d-flex flex-column mx-auto">
-      <a href="https://github.com/mktcode/simplor-website/blob/master/docs/CONSUMER.md" class="btn btn-light btn-lg my-2 shadow-sm d-flex justify-content-start align-items-center">
+      <a @click="$store.commit('showModal', 'ModalRequestData')" class="btn btn-light btn-lg my-2 shadow-sm d-flex justify-content-start align-items-center">
         <fa-icon :icon="['fas', 'file-import']" class="mr-3" style="font-size: 1.5rem" />
         <div class="d-flex flex-column flex-fill">
           Get Real World Data
@@ -24,7 +24,7 @@
           <small class="text-muted">Install, run and earn in less than 5 minutes!</small>
         </div>
       </a>
-      <a @click="$store.commit('showModal', 'CreateAdapter')" class="btn btn-light btn-lg my-2 shadow-sm d-inline-flex justify-content-center align-items-center">
+      <a @click="$store.commit('showModal', 'ModalCreateAdapter')" class="btn btn-light btn-lg my-2 shadow-sm d-inline-flex justify-content-center align-items-center">
         <fa-icon :icon="['fas', 'code']" class="mr-3" />
         <div class="d-flex flex-column flex-fill">
           Create an Adapter
