@@ -4,7 +4,7 @@
     <canvas id="animation-canvas" class="position-absolute"></canvas>
     <Connect />
     <h1 class="logo text-white mb-0 pt-5 pb-3 d-flex justify-content-center align-items-center">
-      Simpl<img src="/logo.svg" alt="O" class="rounded-circle mx-1" />r
+      Simpl<fa-icon :icon="['far', 'circle']" class="rounded-circle mx-1" style="font-size: 3rem" />r
     </h1>
     <p class="lead text-center text-white-50 mt-3 font-weight-bold">
       Simple, flexible and autonomous Oracle Service<br>for Ethereum Smart Contracts.

@@ -57,6 +57,7 @@ export default {
         regular: [
           'faFile',
           'faCopy',
+          'faCircle',
         ],
         solid: [
           'faCheck',
