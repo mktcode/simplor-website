@@ -2,7 +2,7 @@
   <div class="bg-primary pb-3 min-vh-100 d-flex flex-column" id="header">
     <LinesAnimation />
     <canvas id="animation-canvas" class="position-absolute"></canvas>
-    <Connect />
+    <Nav dark />
     <h1 class="logo text-white mb-0 pt-5 pb-3 d-flex justify-content-center align-items-center">
       Simpl<fa-icon :icon="['far', 'circle']" class="rounded-circle mx-1" style="font-size: 3rem" />r
     </h1>
@@ -11,7 +11,7 @@
     </p>
     <div class="text-center py-5 d-flex flex-column mx-auto">
       <a @click="$store.commit('showModal', 'ModalRequestData')" class="btn btn-light btn-lg my-2 shadow-sm d-flex justify-content-start align-items-center">
-        <fa-icon :icon="['fas', 'file-import']" class="mr-3" style="font-size: 1.5rem" />
+        <fa-icon :icon="['fas', 'file-import']" class="mr-3" />
         <div class="d-flex flex-column flex-fill">
           Get Real World Data
           <small class="text-muted">Simple. Low cost. Dezentralized. Any data.</small>
@@ -63,9 +63,9 @@
       z-index: 2
     .logo
       text-shadow: 0 0 25px rgba(0, 0, 0, 1)
-      img
+      svg
         width: 3rem
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 20px inset rgba(0, 0, 0, 1)
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.35), 0 0 20px inset rgba(0, 0, 0, 0.35)
     .scroll-link
       svg
         transition: top 0.1s ease
